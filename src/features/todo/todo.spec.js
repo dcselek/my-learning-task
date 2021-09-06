@@ -1,4 +1,4 @@
-import todoReducer, {addTodo} from './todoSlice'
+import todoReducer, {addTodo, removeTodo} from './todoSlice'
 
 describe('todo reducer', () => {
     const initialState = {
@@ -7,7 +7,13 @@ describe('todo reducer', () => {
 
     test('should initial state value equal output', () => {
         const todoValue = todoReducer(initialState, addTodo("Bbb"))
-        expect(todoValue).toEqual("Bbb")
+        expect(todoValue.values).toEqual(["Aaa","Bbb"])
     })
+
+    test('should entered value will be deleted value', () => {
+        let todoValue = todoReducer(initialState, removeTodo(0))
+        expect(todoValue.values).toEqual([[]])
+    })
+    
 })
 
