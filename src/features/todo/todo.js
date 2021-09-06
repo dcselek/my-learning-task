@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { addTodo } from "./todoSlice";
+import { addTodo, removeTodo } from "./todoSlice";
 import { useDispatch, useSelector } from 'react-redux'
 
 const Todo = () => {
@@ -12,7 +12,7 @@ const Todo = () => {
     }
 
     let todoList = todo.map((todo, key) => (
-        <div key={key}>
+        <div key={key} onClick={() => dispatch(removeTodo(key))} style={{cursor:"pointer"}}>
             {todo}
         </div>
     ))
