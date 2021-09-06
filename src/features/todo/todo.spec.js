@@ -1,3 +1,5 @@
+import todoReducer, {addTodo} from './todoSlice'
+
 describe('todo reducer', () => {
     const initialState = {
         value: "Bbb"
