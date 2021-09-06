@@ -1,9 +1,10 @@
 import './App.css';
+import Todo from './features/todo/todo'
 
 function App() {
   return (
     <div className="App">
-      
+      <Todo/>
     </div>
   );
 }
