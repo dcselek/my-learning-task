@@ -6,7 +6,7 @@ describe('todo reducer', () => {
     }
 
     test('should initial state value equal output', () => {
-        const todoValue = todoReducer(initialState, addTodo())
+        const todoValue = todoReducer(initialState, addTodo("Bbb"))
         expect(todoValue.value).toEqual("Bbb")
     })
 })
